@@ -14,7 +14,7 @@ class Query:
     def test() -> str:
         return "Test"
 
-schema = strawberry.Schema(Query, schema_directives=[TestDirective])
+schema = strawberry.Schema(Query, types=[TestDirective])
 
 router = GraphQLRouter(schema, prefix='/graphql', graphql_ide="apollo-sandbox")
 app = FastAPI()
